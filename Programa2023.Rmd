@@ -93,12 +93,12 @@ Jordi Real, bioestadístico del grupo DAP-Cat y técnico de investigación de la
 
 # Ponentes
 
-Expertos en bioestadística con extensa experiencia en el tema que
+Expertos en bioestadística con extensa experiencia en el tema que se 
 presenta.
 
 # Duración
 
-Las sessiones tienen una duración de 90 Minutos que incluyen
+Las sesiones tienen una duración de 90 Minutos que incluyen
 presentación del tema de aproximadamente 60 minutos y, preguntas de los
 participantes con el correspondiente debate (30 minutos)
 
@@ -125,13 +125,17 @@ aproximada de 1 ponente cada mes.
 
 ```{r, include=TRUE, echo=FALSE}
 
-options(knitr.kable.NA = '')
+options(knitr.kable.NA = '*')
 
 programa %>% mutate(data=if_else(!is.na(data),data,mes,missing=mes)) %>% 
   filter(any>=2022) %>%  
   transmute(Núm=id,Titulo=paste0("[",Titulo,"]","(",link,")"),Ponente,Fecha=data) %>% 
   knitr::kable() %>% 
-  kableExtra::kable_styling()
+  kableExtra::footnote(general = "El contenido del programa es susceptible de cambios y modificaciones",
+           symbol = c("Fecha exacta y/o ponente pendiente de confirmación")) %>% 
+  kableExtra::kable_styling() 
+
+
 
 ```
 
