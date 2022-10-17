@@ -1,0 +1,162 @@
+---
+title: "Sesiones de estadística DAP-Cat. 2022-2023"
+subtitle: "Estadística y metodologia en investigación clínica"
+website: "https://github.com/SessionsMetode/"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+author: "[Jordi Real Gatius](https://jrealgatius.github.io/CV/JReal_CV.html)" 
+output:
+  html_document:
+    df_print: paged
+    toc: true
+    toc_float: false
+    fig_caption: true
+    css: logos_css/usr_styles.css
+    
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{=html}
+<script>
+   $(document).ready(function() {
+     $head = $('#header');
+     $head.prepend('<img src=\"https://www.idiapjgol.org/images/logo.png\" style=\"float: right ;width: 100px;\"/>')
+     $head.prepend('<img src=\"logos_css/logoLilly.png" style=\"text-align: center;margin:auto;width: 80px;\"/>')
+     $head.prepend('<img src=\"logos_css/logo.jpg" style=\"text-align: left;margin:auto;width: 100px;\"/>')
+     
+     <!-- $head.prepend('<img src=\"https://avatars2.githubusercontent.com/u/57066591?s=200&v=4\" style=\"text-align: center;margin:auto;width: 80px;\"/>') -->
+   });
+</script>
+```
+
+------------------------------------------------------------------------
+
+```{r htmltemplate, echo=FALSE, include=FALSE}
+# ![](logoDAP_Cat.png)
+
+# htmltools::img(src = knitr::image_uri(file.path("logos_css", "logo.jpg")), 
+#                alt = 'logo', 
+#                style = 'position:absolute; top:-90px; right:1%; padding:5px;')
+
+# img<-htmltools::img(src = knitr::image_uri(file.path("logos_css", "logo.jpg")), 
+#                alt = 'logo', 
+#                style = 'position:absolute; text-align: center;padding-right:150px;width: 185px;padding:10px;')
+
+# src="https://www.idiapjgol.org/images/logo.png" 
+# style= 'float: right ;width: 130px'
+# 
+# src="https://avatars2.githubusercontent.com/u/57066591?s=200&v=4"
+# style = 'text-align: center;;margin:auto;width: 80px'
+
+# padding-left:30px
+
+# htmlhead <- paste0('
+#   <script>
+#   document.write(\'<div class="logos">',img,'</div>\')
+#   </script>
+#   ')
+# 
+# readr::write_lines(htmlhead, path = "header.html")
+
+```
+
+
+```{r lectura, echo=FALSE,message=FALSE, warning=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+
+library(dplyr)
+
+
+programa<-readxl::read_xlsx("programa2023.xlsx")
+
+# Preparo dades
+
+programa<-programa %>%  
+  mutate (link=paste0("https://github.com/jrealgatius/SessionsMetode2023/tree/main/s",id)) %>% 
+  mutate(data=format(Fecha,format="%B %d")) 
+
+
+```
+
+
+
+# Objetivo
+
+Dar a conocer a los investigadores aspectos metodológicos o estadísticos
+"no tan habituales" en investigación clínica
+
+# Coordinación
+
+Jordi Real, bioestadístico del grupo DAP-Cat y técnico de investigación de la USR de Barcelona, IDIAP Jordi Gol.
+
+# Ponentes
+
+Expertos en bioestadística con extensa experiencia en el tema que
+presenta.
+
+# Duración
+
+Las sessiones tienen una duración de 90 Minutos que incluyen
+presentación del tema de aproximadamente 60 minutos y, preguntas de los
+participantes con el correspondiente debate (30 minutos)
+
+# Asistentes
+
+Investigadores clínicos seniors del grupo de investigación en Diabetes,
+(DAP-Cat), técnicos de la USR Barcelona y técnicos de investigación del
+IDIAP Jordi Gol.
+
+# Programa 2022-23
+
+Las sessiones versan sobre aspectos independientes que no siguen una
+hilo conductor y tratan sobre temas variados relacionados con el
+análisis estadístico en el ámbito de la investigación clínica.
+
+## Horario
+
+La sessiones se realizarán preferentemente los Martes o jueves por la tarde de
+19:00 a 20:30h en formato Online/Webinar, con una periodicidad
+aproximada de 1 ponente cada mes.
+
+## Temario y [material](https://github.com/jrealgatius/SessionsMetode)
+
+
+```{r, include=TRUE, echo=FALSE}
+
+options(knitr.kable.NA = '')
+
+programa %>% mutate(data=if_else(!is.na(data),data,mes,missing=mes)) %>% 
+  filter(any>=2022) %>%  
+  transmute(Núm=id,Titulo=paste0("[",Titulo,"]","(",link,")"),Ponente,Fecha=data) %>% 
+  knitr::kable() %>% 
+  kableExtra::kable_styling()
+
+```
+
+
+## Otros temas
+
+-   Series temporales
+-   Métodos multivariantes
+-   Modelos mixtos / Jerárquicos
+-   Validación de modelos predictivos
+-   Errores estadísticos no tan habituales
+
+
+----
+
+Jordi Real Gatius <br/>
+USR Barcelona - IDIAP Jordi Gol <br/>
+Grupo DAP-Cat <br/>
+
+[jreal\@idiapjgol.info](mailto:jreal@idiapjgol.info){.email}
+
+<p style="text-align: center;">
+
+<em><https://github.com/jrealgatius/></em>
+
+<em><https://jrealgatius.github.io/SessionsMetode2023/Programa2023.html><em>
+
+</p>
