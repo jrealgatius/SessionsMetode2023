@@ -143,8 +143,7 @@ programa %>% mutate(data=if_else(!is.na(data),data,mes,missing=mes)) %>%
 ## Otros temas
 
 -   Series temporales
--   Métodos multivariantes
--   Modelos mixtos / Jerárquicos
+-   Métodos multivariantes (PCA, Factorial etc..)
 -   Validación de modelos predictivos
 -   Errores estadísticos no tan habituales
 
