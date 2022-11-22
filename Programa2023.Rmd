@@ -22,12 +22,14 @@ editor_options:
    $(document).ready(function() {
      $head = $('#header');
      $head.prepend('<img src=\"https://www.idiapjgol.org/images/logo.png\" style=\"float: right ;width: 100px;\"/>')
-     $head.prepend('<img src=\"logos_css/logoLilly.png" style=\"text-align: center;margin:auto;width: 80px;\"/>')
      $head.prepend('<img src=\"logos_css/logo.jpg" style=\"text-align: left;margin:auto;width: 100px;\"/>')
      
      <!-- $head.prepend('<img src=\"https://avatars2.githubusercontent.com/u/57066591?s=200&v=4\" style=\"text-align: center;margin:auto;width: 80px;\"/>') -->
    });
 </script>
+
+     <!-- $head.prepend('<img src=\"logos_css/logoLilly.png" style=\"text-align: center;margin:auto;width: 80px;\"/>') -->
+
 ```
 
 ------------------------------------------------------------------------
