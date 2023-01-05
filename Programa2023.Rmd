@@ -119,7 +119,7 @@ análisis estadístico en el ámbito de la investigación clínica.
 ## Horario
 
 La sessiones se realizarán preferentemente los Martes o jueves por la tarde de
-19:00 a 20:30h en formato Online/Webinar, con una periodicidad
+18:00 a 19:30h en formato Online/Webinar, con una periodicidad
 aproximada de 1 ponente cada mes.
 
 ## Temario y [material](https://github.com/jrealgatius/SessionsMetode)
